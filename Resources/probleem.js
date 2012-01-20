@@ -29,7 +29,7 @@ var buttonTestView = Titanium.UI.createButton({
 });
 
 var button2 = Titanium.UI.createButton({
-	title:'Vorige stap',
+	title:'Nog volgendere stap',
 	top:10,
 	left:10
 });
