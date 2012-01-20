@@ -217,21 +217,13 @@ win1.add(button);
 //
 var win2 = Titanium.UI.createWindow({  
     title:'Tab 2',
-    backgroundColor:'#fff'
+    backgroundColor:'#fff',
+    url:'probleem.js'
 });
 var tab2 = Titanium.UI.createTab({  
     icon:'KS_nav_ui.png',
     title:'probleem',
     window:win2
-});
-
-
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
 });
 
 
