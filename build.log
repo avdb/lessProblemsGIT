@@ -1,43 +1,31 @@
 Logfile initialized
-[INFO] logfile = /Users/an/Documents/Titanium Studio Workspace/Hello World/build.log
-[DEBUG] /Users/an/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/builder.py distribute Hello World /Applications/android-sdk-macosx /Users/an/Documents/Titanium Studio Workspace/Hello World com.lessius.avdb /Users/an/Desktop/untitled folder/Untitled.rtf avdb  /Users/an/Desktop 7
+[INFO] logfile = /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/build.log
+[DEBUG] /Users/an/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/builder.py simulator Less Problems /Applications/android-sdk-macosx /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT com.lessius.avdb 15 HVGA 
+[INFO] Building Less Problems for Android ... one moment
 [INFO] Titanium SDK version: 1.8.0.1 (12/22/11 13:09 fbdc96f)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.023018 seconds on emulator to get ready
+[DEBUG] com.lessius.avdb installed? True
+[INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying project resources..
-[INFO] Detected tiapp.xml change (or assets deleted), forcing full re-build...
-[TRACE] COPYING CREATED FILE: /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/appicon.png => /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/appicon.png
-[TRACE] COPYING CREATED FILE: /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/default.png => /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/default.png
-[TRACE] COPYING CREATED FILE: /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/app.js => /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/app.js
-[TRACE] COPYING CREATED FILE: /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/KS_nav_ui.png => /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/KS_nav_ui.png
-[TRACE] COPYING CREATED FILE: /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/KS_nav_views.png => /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/KS_nav_views.png
-[TRACE] Generating Java Classes
+[TRACE] COPYING MODIFIED FILE: /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/app.js => /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/build/android/bin/assets/Resources/app.js
+[INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
-[DEBUG] copying app icon: /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/appicon.png
-[DEBUG] generating theme.xml
-[DEBUG] found drawable-long-land-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-land-hdpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-land-hdpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-long-land-hdpi/background.png
-[DEBUG] found drawable-long-land-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-land-ldpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-land-ldpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-long-land-ldpi/background.png
-[DEBUG] found drawable-long-port-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-port-hdpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-port-hdpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-long-port-hdpi/background.png
-[DEBUG] found drawable-long-port-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-port-ldpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-long-port-ldpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-long-port-ldpi/background.png
-[DEBUG] found drawable-notlong-land-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-land-hdpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-land-hdpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-notlong-land-hdpi/background.png
-[DEBUG] found drawable-notlong-land-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-land-ldpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-land-ldpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-notlong-land-ldpi/background.png
-[DEBUG] found drawable-notlong-land-mdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-land-mdpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-land-mdpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-notlong-land-mdpi/background.png
-[DEBUG] found drawable-notlong-port-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-port-hdpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-port-hdpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-notlong-port-hdpi/background.png
-[DEBUG] found drawable-notlong-port-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-port-ldpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-port-ldpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-notlong-port-ldpi/background.png
-[DEBUG] found drawable-notlong-port-mdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-port-mdpi/default.png
-[DEBUG] copying /Users/an/Documents/Titanium Studio Workspace/Hello World/Resources/android/images/res-notlong-port-mdpi/default.png splash screen to /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/res/drawable-notlong-port-mdpi/background.png
-[DEBUG] found splash screen at /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/bin/assets/Resources/default.png
-[TRACE] Writing out AndroidManifest.xml
-[DEBUG] adding /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/HelloWorldActivity.java to javac build list
-[DEBUG] adding /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/HelloWorldAppInfo.java to javac build list
-[DEBUG] adding /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/HelloWorldApplication.java to javac build list
-[DEBUG] adding /Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/R.java to javac build list
-[DEBUG] Building Java Sources: "/Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/HelloWorldActivity.java" "/Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/HelloWorldAppInfo.java" "/Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/HelloWorldApplication.java" "/Users/an/Documents/Titanium Studio Workspace/Hello World/build/android/gen/com/lessius/avdb/R.java"
-[INFO] Compiling Android Resources... This could take some time
+[DEBUG] found drawable-long-land-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-long-land-hdpi/default.png
+[DEBUG] found drawable-long-land-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-long-land-ldpi/default.png
+[DEBUG] found drawable-long-port-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-long-port-hdpi/default.png
+[DEBUG] found drawable-long-port-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-long-port-ldpi/default.png
+[DEBUG] found drawable-notlong-land-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-notlong-land-hdpi/default.png
+[DEBUG] found drawable-notlong-land-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-notlong-land-ldpi/default.png
+[DEBUG] found drawable-notlong-land-mdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-notlong-land-mdpi/default.png
+[DEBUG] found drawable-notlong-port-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-notlong-port-hdpi/default.png
+[DEBUG] found drawable-notlong-port-ldpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-notlong-port-ldpi/default.png
+[DEBUG] found drawable-notlong-port-mdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-notlong-port-mdpi/default.png
+[INFO] Waiting for SDCard to become available..
+[INFO] Re-launching application ... Less Problems
+[INFO] Launching application ... Less Problems
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.lessius.avdb/.LessProblemsActivity }
+Warning: Activity not started, its current task has been brought to the front
+

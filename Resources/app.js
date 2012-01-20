@@ -25,8 +25,28 @@ var label1 = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto'
 });
+var picker = Ti.UI.createPicker();
+
+var data = [];
+data[0]=Ti.UI.createPickerRow({title:'Bananas',custom_item:'b'});
+data[1]=Ti.UI.createPickerRow({title:'Strawberries',custom_item:'s'});
+data[2]=Ti.UI.createPickerRow({title:'Mangos',custom_item:'m'});
+data[3]=Ti.UI.createPickerRow({title:'Grapes',custom_item:'g'});
+
+// turn on the selection indicator (off by default)
+picker.selectionIndicator = true;
+
+picker.add(data);
+
+
+
+picker.setSelectedRow(0,1,true);
+
+
 
 win1.add(label1);
+win1.add(picker);
+
 
 //
 // create controls tab and root window
@@ -41,6 +61,7 @@ var tab2 = Titanium.UI.createTab({
     window:win2
 });
 
+
 var label2 = Titanium.UI.createLabel({
 	color:'#999',
 	text:'I am Window 2',
@@ -49,7 +70,48 @@ var label2 = Titanium.UI.createLabel({
 	width:'auto'
 });
 
+var nodeTable = Ti.UI.createTableView({
+  height: '100%',
+  width: '100%',
+});
+
 win2.add(label2);
+win2.add(nodeTable);
+
+
+var xhr = Titanium.Network.createHTTPClient();
+
+var nodes = [];
+
+  xhr.onload = function()
+  {
+    //Just log the responseText for fun
+    Ti.API.info(this.responseText);
+    
+    //We translate the json string into a neat object
+    var response = JSON.parse(this.responseText);
+ 
+    for (var i in response) {
+      node = response[i];
+      var row = Ti.UI.createTableViewRow({
+        title : node.title,
+      });
+      nodes.push(row);
+    }
+    nodeTable.data = nodes; 
+  };
+  
+  xhr.onerror = function () 
+  {
+    Ti.API.info('Unable to fetch nodes from Drupal');
+    nodeTable.data = nodes; 
+  };
+// open the client
+xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
+
+// send the data
+xhr.send();
+
 
 
 
