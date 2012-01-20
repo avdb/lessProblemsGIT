@@ -4,25 +4,25 @@ Titanium.UI.setBackgroundColor('#000');
 //
 // create base UI tab and root window
 //
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
+var winmain = Titanium.UI.createWindow({  
+    title:'Less Rooster Home',
     backgroundColor:'#fff'
 });
 
-var label1_1 = Titanium.UI.createLabel({
+var labelPlaats = Titanium.UI.createLabel({
 	color:'#999',
 	text:'Plaats',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	font:{fontSize:30,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:10,
+	top:15,
 	left:20
 });
 
 
 var picker1_1 = Ti.UI.createPicker({
 	top:10,
-	left:100
+	left:200
 });
 
 var data1_1 = [];
@@ -37,20 +37,20 @@ picker1_1.add(data1_1);
 
 picker1_1.setSelectedRow(0,0,true);
 
-var label1_2 = Titanium.UI.createLabel({
+var labelGebouw = Titanium.UI.createLabel({
 	color:'#999',
 	text:'Gebouw',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	font:{fontSize:30,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:60,
+	top:85,
 	left:20
 });
 
 
 var picker1_2 = Ti.UI.createPicker({
-	top:60,
-	left:100
+	top:80,
+	left:200
 });
 
 var data1_2 = [];
@@ -66,19 +66,19 @@ picker1_2.add(data1_2);
 picker1_2.setSelectedRow(0,0,true);
 
 
-var label1_3 = Titanium.UI.createLabel({
+var labelVerdiep = Titanium.UI.createLabel({
 	color:'#999',
 	text:'Verdiep',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	font:{fontSize:30,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:110,
+	top:155,
 	left:20
 });
 
 var picker1_3 = Ti.UI.createPicker({
-	top:110,
-	left:100
+	top:150,
+	left:200
 });
 
 var data1_3 = [];
@@ -94,33 +94,37 @@ picker1_3.add(data1_3);
 picker1_3.setSelectedRow(0,0,true);
 
 
-win1.add(label1_1);
-win1.add(picker1_1);
-win1.add(label1_2);
-win1.add(picker1_2);
-win1.add(label1_3);
-win1.add(picker1_3);
+winmain.add(labelPlaats);
+winmain.add(picker1_1);
+winmain.add(labelGebouw);
+winmain.add(picker1_2);
+winmain.add(labelVerdiep);
+winmain.add(picker1_3);
 
 
 //lijst binnen halen met problemen op die locatie
 
 var label1_4 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'Problemen',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	text:'Bestaande Problemen',
+	color: 'black',
+	backgroundColor: 'grey',
+	font:{fontSize:30,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:160,
+	top:235,
 	left:20
 });
 
 var nodeTable = Ti.UI.createTableView({
-  	height: '100%',
-  	width: '100%',
-  	top:190
+  	height: '80%',
+  	width: '80%',
+  	align: 'center',
+  	top:270
+  	
 });
-win1.add(label1_4);
-win1.add(nodeTable);
+
+winmain.add(label1_4);
+winmain.add(nodeTable);
 
 
 var xhr = Titanium.Network.createHTTPClient();
@@ -156,11 +160,12 @@ xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/no
 // send the data
 xhr.send();
 
-//knop volgende window
+//knop nieuw probleem
 var button = Titanium.UI.createButton({
-	title:'Volgende stap',
-	top:350,
-	right:10
+	title:'Nieuw Probleem',
+	color: '#A90329',
+	align: 'center',
+	top:650,
 });
 
 
@@ -168,19 +173,19 @@ button.addEventListener('click',function(e)
 {
 	Ti.API.info('open window');
 	//window openen
-	win1.close();
+	winmain.close();
 	win2.open();
 });
 
 
-win1.add(button);
+winmain.add(button);
 
 
-win1.open();
+winmain.open();
 
 
 //
-// create controls tab and root window
+// create 2nd window
 //
 var win2 = Titanium.UI.createWindow({  
     title:'Tab 2',
