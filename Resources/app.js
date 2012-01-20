@@ -14,7 +14,7 @@ var win1 = Titanium.UI.createWindow({
 });
 var tab1 = Titanium.UI.createTab({  
     icon:'KS_nav_views.png',
-    title:'Tab 1',
+    title:'plaats',
     window:win1
 });
 
@@ -28,25 +28,6 @@ var label1_1 = Titanium.UI.createLabel({
 	left:20
 });
 
-var label1_2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'Gebouw',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:60,
-	left:20
-});
-
-var label1_3 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'Verdiep',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:110,
-	left:20
-});
 
 var picker1_1 = Ti.UI.createPicker({
 	top:10,
@@ -65,28 +46,36 @@ picker1_1.add(data1_1);
 
 picker1_1.setSelectedRow(0,0,true);
 
-var visible=false;
+var visible=true;
 picker1_1.addEventListener('change',function(e)
 {
 	if (visible)
 	{
-		picker1_2.hide();
-		label1_2.hide();
 		visible=false;
 	}
 	else
 	{
-		picker1_2.show();
-		label1_2.show();
+		win1.add(label1_2);
+		win1.add(picker1_2);
 		visible=true;
 	}
 });
 
 
+var label1_2 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'Gebouw',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:60,
+	left:20
+});
+
+
 var picker1_2 = Ti.UI.createPicker({
 	top:60,
-	left:100,
-	visible:false
+	left:100
 });
 
 var data1_2 = [];
@@ -101,24 +90,31 @@ picker1_2.add(data1_2);
 
 picker1_2.setSelectedRow(0,0,true);
 
-var visible2=false;
+var visible2=true;
 picker1_2.addEventListener('change',function(e)
 {
 	if (visible2)
 	{
-		picker1_3.hide();
-		label1_3.hide();
 		visible=false;
 	}
 	else
 	{
-		picker1_3.show();
-		label1_3.show();
-		visible=true;
+		win1.add(label1_3);
+		win1.add(picker1_3);
+		visible2=true;
 	}
 });
 
 
+var label1_3 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'Verdiep',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:110,
+	left:20
+});
 
 var picker1_3 = Ti.UI.createPicker({
 	top:110,
@@ -139,42 +135,29 @@ picker1_3.setSelectedRow(0,0,true);
 
 
 win1.add(label1_1);
-win1.add(label1_2);
-win1.add(label1_3);
 win1.add(picker1_1);
-win1.add(picker1_2);
-win1.add(picker1_3);
 
 
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
-});
+//lijst binnen halen met problemen op die locatie
 
-
-var label2 = Titanium.UI.createLabel({
+var label1_4 = Titanium.UI.createLabel({
 	color:'#999',
-	text:'I am Window 2',
+	text:'Problemen',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
-	width:'auto'
+	width:'auto',
+	top:160,
+	left:20
 });
 
 var nodeTable = Ti.UI.createTableView({
-  height: '100%',
-  width: '100%',
+  	height: '50%',
+  	width: '100%',
+  	top:160,
+	left:20
 });
-
-win2.add(label2);
-win2.add(nodeTable);
+win1.add(label1_4);
+win1.add(nodeTable);
 
 
 var xhr = Titanium.Network.createHTTPClient();
@@ -192,7 +175,7 @@ var nodes = [];
     for (var i in response) {
       node = response[i];
       var row = Ti.UI.createTableViewRow({
-        title : node.title,
+        title : node.gebouw,
       });
       nodes.push(row);
     }
@@ -209,6 +192,34 @@ xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/no
 
 // send the data
 xhr.send();
+
+
+
+
+
+
+
+//
+// create controls tab and root window
+//
+var win2 = Titanium.UI.createWindow({  
+    title:'Tab 2',
+    backgroundColor:'#fff'
+});
+var tab2 = Titanium.UI.createTab({  
+    icon:'KS_nav_ui.png',
+    title:'probleem',
+    window:win2
+});
+
+
+var label2 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'I am Window 2',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto'
+});
 
 
 

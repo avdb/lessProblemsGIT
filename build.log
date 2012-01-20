@@ -1,15 +1,16 @@
 Logfile initialized
 [INFO] logfile = /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/build.log
-[DEBUG] /Users/an/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/builder.py simulator Less Problems /Applications/android-sdk-macosx /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT com.lessius.avdb 15 HVGA 
+[DEBUG] /Users/an/Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/builder.py simulator Less Problems /Applications/android-sdk-macosx /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT com.lessius.avdb 15 HVGA /127.0.0.1:52178
 [INFO] Building Less Problems for Android ... one moment
 [INFO] Titanium SDK version: 1.8.0.1 (12/22/11 13:09 fbdc96f)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.020760 seconds on emulator to get ready
+[DEBUG] waited 0.028741 seconds on emulator to get ready
 [DEBUG] com.lessius.avdb installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/app.js => /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/build/android/bin/assets/Resources/app.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-long-land-hdpi splash screen at /Users/an/Documents/Titanium Studio Workspace/lessProblemsGIT/Resources/android/images/res-long-land-hdpi/default.png
@@ -26,5 +27,5 @@ Logfile initialized
 [INFO] Re-launching application ... Less Problems
 [INFO] Launching application ... Less Problems
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.lessius.avdb/.LessProblemsActivity }
-Warning: Activity not started, its current task has been brought to the front
 
+[INFO] Forwarding host port 52178 to device for debugging.
