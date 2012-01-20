@@ -9,10 +9,10 @@ var winmain = Titanium.UI.createWindow({
     backgroundColor:'#fff'
 });
 
-var labelPlaats = Titanium.UI.createLabel({
+var labelGebouw = Titanium.UI.createLabel({
 	color:'#999',
-	text:'Plaats',
-	font:{fontSize:30,fontFamily:'Helvetica Neue'},
+	text:'Gebouw',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
 	top:15,
@@ -20,87 +20,101 @@ var labelPlaats = Titanium.UI.createLabel({
 });
 
 
-var picker1_1 = Ti.UI.createPicker({
+var pickerGebouw = Ti.UI.createPicker({
 	top:10,
 	left:200
 });
 
-var data1_1 = [];
-data1_1[0]=Ti.UI.createPickerRow({title:'De vest',custom_item:'v'});
-data1_1[1]=Ti.UI.createPickerRow({title:'De ham',custom_item:'h'});
-data1_1[2]=Ti.UI.createPickerRow({title:'Kruidtuin',custom_item:'k'});
+var dataGebouw = [];
+dataGebouw[0]=Ti.UI.createPickerRow({title:'De vest',custom_item:'v'});
+dataGebouw[1]=Ti.UI.createPickerRow({title:'De ham',custom_item:'h'});
+dataGebouw[2]=Ti.UI.createPickerRow({title:'Kruidtuin',custom_item:'k'});
 
 // turn on the selection indicator (off by default)
-picker1_1.selectionIndicator = true;
+pickerGebouw.selectionIndicator = true;
 
-picker1_1.add(data1_1);
-
-picker1_1.setSelectedRow(0,0,true);
-
-var labelGebouw = Titanium.UI.createLabel({
-	color:'#999',
-	text:'Gebouw',
-	font:{fontSize:30,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:85,
-	left:20
-});
-
-
-var picker1_2 = Ti.UI.createPicker({
-	top:80,
-	left:200
-});
-
-var data1_2 = [];
-data1_2[0]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'v1'});
-data1_2[1]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'v2'});
-data1_2[2]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'v3'});
-
-// turn on the selection indicator (off by default)
-picker1_2.selectionIndicator = true;
-
-picker1_2.add(data1_2);
-
-picker1_2.setSelectedRow(0,0,true);
+pickerGebouw.add(dataGebouw);
 
 
 var labelVerdiep = Titanium.UI.createLabel({
 	color:'#999',
 	text:'Verdiep',
-	font:{fontSize:30,fontFamily:'Helvetica Neue'},
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:155,
+	top:40,
 	left:20
 });
 
-var picker1_3 = Ti.UI.createPicker({
-	top:150,
+
+var pickerVerdiep = Ti.UI.createPicker({
+	top:25,
 	left:200
 });
 
-var data1_3 = [];
-data1_3[0]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'l1'});
-data1_3[1]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'l2'});
-data1_3[2]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'l3'});
+var dataVerdiep = [];
+dataVerdiep[0]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'v1'});
+dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'v2'});
+dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'v3'});
 
 // turn on the selection indicator (off by default)
-picker1_3.selectionIndicator = true;
+pickerVerdiep.selectionIndicator = true;
 
-picker1_3.add(data1_3);
-
-picker1_3.setSelectedRow(0,0,true);
+pickerVerdiep.add(dataVerdiep);
 
 
-winmain.add(labelPlaats);
-winmain.add(picker1_1);
+var labelLokaal = Titanium.UI.createLabel({
+	color:'#999',
+	text:'Lokaal',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:65,
+	left:20
+});
+
+var pickerLokaal = Ti.UI.createPicker({
+	top:50,
+	left:200
+});
+
+var dataLokaal = [];
+dataLokaal[0]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'l1'});
+dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'l2'});
+dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'l3'});
+
+// turn on the selection indicator (off by default)
+pickerLokaal.selectionIndicator = true;
+
+pickerLokaal.add(dataLokaal);
+
+pickerGebouw.addEventListener ('change',function()
+  {
+    labelGebouw.text = pickerGebouw.getSelectedRow(0).title;
+    winmain.remove(pickerGebouw);
+    winmain.add(pickerVerdiep);
+    winmain.add(labelVerdiep);
+  });
+  
+pickerVerdiep.addEventListener ('change',function()
+  {
+  	pickerVerdiep.top = 85;
+    winmain.add(pickerVerdiep);
+    labelVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
+    winmain.remove(pickerVerdiep);
+    winmain.add(labelLokaal);
+    winmain.add(pickerLokaal);
+  });
+ 
+pickerLokaal.addEventListener ('change',function()
+  {
+  	pickerLokaal.top = 115;
+    labelLokaal.text = pickerLokaal.getSelectedRow(0).title;
+    winmain.remove(pickerLokaal);
+  });
+  
 winmain.add(labelGebouw);
-winmain.add(picker1_2);
-winmain.add(labelVerdiep);
-winmain.add(picker1_3);
-
+winmain.add(pickerGebouw);
 
 //lijst binnen halen met problemen op die locatie
 
@@ -108,10 +122,10 @@ var label1_4 = Titanium.UI.createLabel({
 	text:'Bestaande Problemen',
 	color: 'black',
 	backgroundColor: 'grey',
-	font:{fontSize:30,fontFamily:'Helvetica Neue'},
+	font:{fontSize:21,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:235,
+	top:100,
 	left:20
 });
 
@@ -119,7 +133,7 @@ var nodeTable = Ti.UI.createTableView({
   	height: '80%',
   	width: '80%',
   	align: 'center',
-  	top:270
+  	top:130
   	
 });
 
@@ -165,7 +179,7 @@ var button = Titanium.UI.createButton({
 	title:'Nieuw Probleem',
 	color: '#A90329',
 	align: 'center',
-	top:650,
+	top:380,
 });
 
 
@@ -173,13 +187,11 @@ button.addEventListener('click',function(e)
 {
 	Ti.API.info('open window');
 	//window openen
-	winmain.close();
 	win2.open();
 });
 
 
 winmain.add(button);
-
 
 winmain.open();
 
