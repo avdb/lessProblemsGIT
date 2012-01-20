@@ -151,10 +151,9 @@ var label1_4 = Titanium.UI.createLabel({
 });
 
 var nodeTable = Ti.UI.createTableView({
-  	height: '50%',
+  	height: '100%',
   	width: '100%',
-  	top:160,
-	left:20
+  	top:190
 });
 win1.add(label1_4);
 win1.add(nodeTable);
@@ -175,7 +174,7 @@ var nodes = [];
     for (var i in response) {
       node = response[i];
       var row = Ti.UI.createTableViewRow({
-        title : node.gebouw,
+        title : node.title,
       });
       nodes.push(row);
     }
@@ -188,12 +187,26 @@ var nodes = [];
     nodeTable.data = nodes; 
   };
 // open the client
-xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
+xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node/1');
 
 // send the data
 xhr.send();
 
+//knop volgende window
+var button = Titanium.UI.createButton({
+	title:'Volgende stap',
+	top:350,
+	right:10
+})
 
+button.addEventListener('click',function(e)
+{
+	Ti.API.info('open window');
+	//window openen
+});
+
+
+win1.add(button);
 
 
 
