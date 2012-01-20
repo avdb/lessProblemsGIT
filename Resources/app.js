@@ -46,22 +46,6 @@ picker1_1.add(data1_1);
 
 picker1_1.setSelectedRow(0,0,true);
 
-var visible=true;
-picker1_1.addEventListener('change',function(e)
-{
-	if (visible)
-	{
-		visible=false;
-	}
-	else
-	{
-		win1.add(label1_2);
-		win1.add(picker1_2);
-		visible=true;
-	}
-});
-
-
 var label1_2 = Titanium.UI.createLabel({
 	color:'#999',
 	text:'Gebouw',
@@ -89,21 +73,6 @@ picker1_2.selectionIndicator = true;
 picker1_2.add(data1_2);
 
 picker1_2.setSelectedRow(0,0,true);
-
-var visible2=true;
-picker1_2.addEventListener('change',function(e)
-{
-	if (visible2)
-	{
-		visible=false;
-	}
-	else
-	{
-		win1.add(label1_3);
-		win1.add(picker1_3);
-		visible2=true;
-	}
-});
 
 
 var label1_3 = Titanium.UI.createLabel({
@@ -136,6 +105,10 @@ picker1_3.setSelectedRow(0,0,true);
 
 win1.add(label1_1);
 win1.add(picker1_1);
+win1.add(label1_2);
+win1.add(picker1_2);
+win1.add(label1_3);
+win1.add(picker1_3);
 
 
 //lijst binnen halen met problemen op die locatie
