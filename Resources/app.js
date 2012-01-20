@@ -1,21 +1,12 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
-
-
 //
 // create base UI tab and root window
 //
 var win1 = Titanium.UI.createWindow({  
     title:'Tab 1',
     backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'plaats',
-    window:win1
 });
 
 var label1_1 = Titanium.UI.createLabel({
@@ -160,7 +151,7 @@ var nodes = [];
     nodeTable.data = nodes; 
   };
 // open the client
-xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node/1');
+xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
 
 // send the data
 xhr.send();
@@ -170,19 +161,22 @@ var button = Titanium.UI.createButton({
 	title:'Volgende stap',
 	top:350,
 	right:10
-})
+});
+
 
 button.addEventListener('click',function(e)
 {
 	Ti.API.info('open window');
 	//window openen
+	win1.close();
+	win2.open();
 });
 
 
 win1.add(button);
 
 
-
+win1.open();
 
 
 //
@@ -193,21 +187,3 @@ var win2 = Titanium.UI.createWindow({
     backgroundColor:'#fff',
     url:'probleem.js'
 });
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'probleem',
-    window:win2
-});
-
-
-
-
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
-
-
-// open tab group
-tabGroup.open();
