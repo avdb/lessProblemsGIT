@@ -1,5 +1,6 @@
 var win2 = Ti.UI.currentWindow;
 
+
 var label3 = Titanium.UI.createLabel({
 	color:'#999',
 	text:'Nieuw Probleem melden',
@@ -62,6 +63,18 @@ win2.add(label3);
 win2.add(txtName);
 win2.add(txtOmschrijving);
 win2.add(txtSchoolNummer);
+
+var labelTitle = Titanium.UI.createLabel({
+	color:'black',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	width:'auto',
+	top:450,
+	left:10
+});
+win2.add(labelTitle);
+//variable in label stoppen
+labelTitle.text = win2.titleProblem;
+txtName.value = win2.titleProblem;
 
 var name;
 var schoolNumber;

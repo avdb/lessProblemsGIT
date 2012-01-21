@@ -157,6 +157,7 @@ var nodes = [];
       node = response[i];
       var row = Ti.UI.createTableViewRow({
         title : node.title,
+        path : node.uri
       });
       nodes.push(row);
     }
@@ -174,6 +175,145 @@ xhr.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/no
 // send the data
 xhr.send();
 
+
+var xhrNode = Titanium.Network.createHTTPClient();
+var nodePath;
+
+//item van lijst wordt geselecteerd --> extra info tonen.
+nodeTable.addEventListener("click", function(e){
+	
+	nodePath = e.rowData.path;
+	
+	// open the client
+	xhrNode.open('GET',nodePath);
+	
+	// send the data
+	xhrNode.send();
+
+}
+);
+
+xhrNode.onload = function()
+{
+	//Just log the responseText for fun
+	Ti.API.info(this.responseText);
+	
+	//We translate the json string into a neat object
+	var response = JSON.parse(this.responseText);
+	labelItem.text = response.title;
+	//gebouw, verdiep en lokaal
+	for (var i in response.field_gebouw) {
+		//gebouw
+      gebouw = response.field_gebouw[i];
+      labelGebouw.text = "gebouw: "+gebouw[0].value;
+      
+      //verdiep
+      verdiep = response.field_verdiep[i];
+      labelVerdiep.text = "verdiep: "+verdiep[0].value;
+      
+      //lokaal
+      lokaal = response.field_lokaal[i];
+      labelLokaal.text = "lokaal: "+lokaal[0].value;
+    }
+    
+/*
+	//posten naar drupal service:
+	var xhrTest = Titanium.Network.createHTTPClient();
+
+	var loginObject = {
+		"title" : labelItem.text,
+		"type" : "node",
+		"body" : {
+			"und" : [{
+				"value" : "testen posten via titanium",
+				"summary" : "",
+				"format" : "filtered_html",
+				"safe_value" : "<p>Beamer wil niet meer afsluiten.</p>\n",
+				"safe_summary" : ""
+			}]
+		},
+		"field_gebouw" : {
+			"und" : [{
+				"value" : "" + gebouw[0].value + "",
+				"format" : null,
+				"safe_value" : "De vest"
+			}]
+		},
+		"field_verdiep" : {
+			"und" : [{
+				"value" : "" + verdiep[0].value + "",
+				"format" : null,
+				"safe_value" : "3"
+			}]
+		},
+		"field_lokaal" : {
+			"und" : [{
+				"value" : "" + lokaal[0].value + "",
+				"format" : null,
+				"safe_value" : "12"
+			}]
+		}
+	}
+	var loginString = JSON.stringify(loginObject);
+	xhrTest.open('POST', 'http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
+	// set the content-type header
+	xhrTest.setRequestHeader('content-type', 'application/json');
+
+	// send the data
+	xhrTest.send(loginString);
+	
+----- einde posten naar drupal service!----
+*/
+
+};
+	  
+xhrNode.onerror = function () 
+{
+	Ti.API.info('Unable to fetch nodes from Drupal');
+};
+var labelItem = Titanium.UI.createLabel({
+	color: 'black',
+	backgroundColor: 'grey',
+	font:{fontSize:21,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:450,
+	left:10
+});
+var labelGebouw = Titanium.UI.createLabel({
+	color: 'black',
+	backgroundColor: 'grey',
+	font:{fontSize:21,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:500,
+	left:10
+});
+var labelVerdiep = Titanium.UI.createLabel({
+	color: 'black',
+	backgroundColor: 'grey',
+	font:{fontSize:21,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:550,
+	left:10
+});
+var labelLokaal = Titanium.UI.createLabel({
+	color: 'black',
+	backgroundColor: 'grey',
+	font:{fontSize:21,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:600,
+	left:10
+
+});
+winmain.add(labelItem);
+winmain.add(labelLokaal);
+winmain.add(labelVerdiep);
+winmain.add(labelGebouw);
+
+
 //knop nieuw probleem
 var button = Titanium.UI.createButton({
 	title:'Nieuw Probleem',
@@ -185,21 +325,24 @@ var button = Titanium.UI.createButton({
 
 button.addEventListener('click',function(e)
 {
+	//variables meesturen
+	win2.titleProblem = labelItem.text;
 	//window openen
 	win2.open();
 });
-
 
 winmain.add(button);
 
 winmain.open();
 
 
-//
+
+
+
 // create 2nd window
 //
 var win2 = Titanium.UI.createWindow({  
     title:'Tab 2',
     backgroundColor:'#fff',
-    url:'probleem.js'
+    url:'probleem.js',
 });
