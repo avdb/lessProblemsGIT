@@ -2,11 +2,11 @@ var win2 = Ti.UI.currentWindow;
 
 
 var label3 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'black',
 	text:'Nieuw Probleem melden',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	width:'auto',
-	top:10,
+	top:5,
 	left:10
 });
 
