@@ -121,7 +121,7 @@ winmain.add(pickerGebouw);
 var label1_4 = Titanium.UI.createLabel({
 	text:'Bestaande Problemen',
 	color: 'black',
-	backgroundColor: 'grey',
+	backgroundColor: '#999',
 	font:{fontSize:21,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
@@ -189,6 +189,7 @@ nodeTable.addEventListener("click", function(e){
 	
 	// send the data
 	xhrNode.send();
+	
 
 }
 );
@@ -214,6 +215,14 @@ xhrNode.onload = function()
       //lokaal
       lokaal = response.field_lokaal[i];
       labelItemLokaal.text = "lokaal: "+lokaal[0].value;
+      
+      //variables meesturen
+	win2.titleProblem = labelItem.text;
+	win2.gebouwProblem = labelItemGebouw.text;
+	win2.verdiepProblem = labelItemVerdiep.text;
+	win2.lokaalProblem = labelItemLokaal.text;
+	//window openen
+	win2.open();
     }
     
 /*
