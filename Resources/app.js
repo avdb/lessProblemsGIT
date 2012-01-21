@@ -205,15 +205,15 @@ xhrNode.onload = function()
 	for (var i in response.field_gebouw) {
 		//gebouw
       gebouw = response.field_gebouw[i];
-      labelGebouw.text = "gebouw: "+gebouw[0].value;
+      labelItemGebouw.text = "gebouw: "+gebouw[0].value;
       
       //verdiep
       verdiep = response.field_verdiep[i];
-      labelVerdiep.text = "verdiep: "+verdiep[0].value;
+      labelItemVerdiep.text = "verdiep: "+verdiep[0].value;
       
       //lokaal
       lokaal = response.field_lokaal[i];
-      labelLokaal.text = "lokaal: "+lokaal[0].value;
+      labelItemLokaal.text = "lokaal: "+lokaal[0].value;
     }
     
 /*
@@ -280,7 +280,7 @@ var labelItem = Titanium.UI.createLabel({
 	top:450,
 	left:10
 });
-var labelGebouw = Titanium.UI.createLabel({
+var labelItemGebouw = Titanium.UI.createLabel({
 	color: 'black',
 	backgroundColor: 'grey',
 	font:{fontSize:21,fontFamily:'Helvetica Neue'},
@@ -289,7 +289,7 @@ var labelGebouw = Titanium.UI.createLabel({
 	top:500,
 	left:10
 });
-var labelVerdiep = Titanium.UI.createLabel({
+var labelItemVerdiep = Titanium.UI.createLabel({
 	color: 'black',
 	backgroundColor: 'grey',
 	font:{fontSize:21,fontFamily:'Helvetica Neue'},
@@ -298,7 +298,7 @@ var labelVerdiep = Titanium.UI.createLabel({
 	top:550,
 	left:10
 });
-var labelLokaal = Titanium.UI.createLabel({
+var labelItemLokaal = Titanium.UI.createLabel({
 	color: 'black',
 	backgroundColor: 'grey',
 	font:{fontSize:21,fontFamily:'Helvetica Neue'},
@@ -309,9 +309,9 @@ var labelLokaal = Titanium.UI.createLabel({
 
 });
 winmain.add(labelItem);
-winmain.add(labelLokaal);
-winmain.add(labelVerdiep);
-winmain.add(labelGebouw);
+winmain.add(labelItemLokaal);
+winmain.add(labelItemVerdiep);
+winmain.add(labelItemGebouw);
 
 
 //knop nieuw probleem
