@@ -91,6 +91,7 @@ pickerLokaal.add(dataLokaal);
 pickerGebouw.addEventListener ('change',function()
   {
     labelGebouw.text = pickerGebouw.getSelectedRow(0).title;
+    labelGebouw.color = "black";
     winmain.remove(pickerGebouw);
     winmain.add(pickerVerdiep);
     winmain.add(labelVerdiep);
@@ -101,6 +102,7 @@ pickerVerdiep.addEventListener ('change',function()
   	pickerVerdiep.top = 85;
     winmain.add(pickerVerdiep);
     labelVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
+    labelVerdiep.color = "black";
     winmain.remove(pickerVerdiep);
     winmain.add(labelLokaal);
     winmain.add(pickerLokaal);
@@ -110,6 +112,7 @@ pickerLokaal.addEventListener ('change',function()
   {
   	pickerLokaal.top = 115;
     labelLokaal.text = pickerLokaal.getSelectedRow(0).title;
+    labelLokaal.color = "black";
     winmain.remove(pickerLokaal);
   });
   
