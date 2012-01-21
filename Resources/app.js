@@ -185,7 +185,6 @@ var button = Titanium.UI.createButton({
 
 button.addEventListener('click',function(e)
 {
-	Ti.API.info('open window');
 	//window openen
 	win2.open();
 });
