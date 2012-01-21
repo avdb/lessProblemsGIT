@@ -344,5 +344,5 @@ winmain.open();
 var win2 = Titanium.UI.createWindow({  
     title:'Tab 2',
     backgroundColor:'#fff',
-    url:'probleem.js',
+    url:'probleem.js'
 });
