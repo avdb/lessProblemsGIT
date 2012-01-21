@@ -91,6 +91,7 @@ pickerLokaal.add(dataLokaal);
 pickerGebouw.addEventListener ('change',function()
   {
     labelGebouw.text = pickerGebouw.getSelectedRow(0).title;
+    labelItemGebouw.text = pickerGebouw.getSelectedRow(0).title;
     labelGebouw.color = "black";
     winmain.remove(pickerGebouw);
     winmain.add(pickerVerdiep);
@@ -101,7 +102,8 @@ pickerVerdiep.addEventListener ('change',function()
   {
   	pickerVerdiep.top = 85;
     winmain.add(pickerVerdiep);
-    labelVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
+    labelVerdiep.text = pickerVerdiep.getSelectedRow(0).title;    
+    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
     labelVerdiep.color = "black";
     winmain.remove(pickerVerdiep);
     winmain.add(labelLokaal);
@@ -112,8 +114,10 @@ pickerLokaal.addEventListener ('change',function()
   {
   	pickerLokaal.top = 115;
     labelLokaal.text = pickerLokaal.getSelectedRow(0).title;
+    labelItemLokaal.text = pickerLokaal.getSelectedRow(0).title;
     labelLokaal.color = "black";
     winmain.remove(pickerLokaal);
+    winmain.add(button);
   });
   
 winmain.add(labelGebouw);
@@ -330,20 +334,22 @@ winmain.add(labelItemGebouw);
 var button = Titanium.UI.createButton({
 	title:'Nieuw Probleem',
 	color: '#A90329',
-	align: 'center',
-	top:380,
+	top:45,
+	right:20
 });
 
 
 button.addEventListener('click',function(e)
 {
 	//variables meesturen
-	win2.titleProblem = labelItem.text;
+	win2.titleProblem = labelItem.text;	
+	win2.gebouwProblem = labelItemGebouw.text;
+	win2.verdiepProblem = labelItemVerdiep.text;
+	win2.lokaalProblem = labelItemLokaal.text;
+	//window openen
 	//window openen
 	win2.open();
 });
-
-winmain.add(button);
 
 winmain.open();
 

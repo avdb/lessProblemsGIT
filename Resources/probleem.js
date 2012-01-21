@@ -15,7 +15,7 @@ var labelItemGebouw = Titanium.UI.createLabel({
 	font:{fontSize:14,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:20,
+	top:30,
 	left:10
 });
 var labelItemVerdiep = Titanium.UI.createLabel({
@@ -24,20 +24,20 @@ var labelItemVerdiep = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto',
 	top:30,
-	left:10
+	left:200
 });
 var labelItemLokaal = Titanium.UI.createLabel({
 	color: 'black',
 	font:{fontSize:14,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:40,
+	top:50,
 	left:10
 
 });
 
 var txtName = Titanium.UI.createTextField({
-	top:60,
+	top:80,
 	left: 20,
 	width: 285,
 	height: 40,
@@ -59,7 +59,7 @@ var txtOmschrijving = Titanium.UI.createTextArea({
 });
 
 var txtSchoolNummer = Titanium.UI.createTextField({
-	top:180,
+	top:240,
 	left: 20,
 	width: 285,
 	height: 40,
