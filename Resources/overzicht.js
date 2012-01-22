@@ -1,9 +1,9 @@
 var winOverzicht = Ti.UI.currentWindow;
 
-var win3 = Titanium.UI.createWindow({  
-    title:'Probleem',
+var winmain = Titanium.UI.createWindow({  
+    title:'Main',
     backgroundColor:'#fff',
-    url:'probleem.js'
+    url:'app.js'
 });
 var win4 = Titanium.UI.createWindow({  
     title:'Einde',
@@ -12,41 +12,77 @@ var win4 = Titanium.UI.createWindow({
 });
 
 var label3 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'Jou probleem:',
+	color:'black',
+	text:'Overzicht melding',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	width:'auto',
-	top:10,
+	top:5,
 	left:10
 });
 
 var label4 = Titanium.UI.createLabel({
 	color:'#999',
-	text:'Je naam: ',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	text:'Probleem:',
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
-	top:60,
+	top:30,
 	left:10
 });
 
 var label5 = Titanium.UI.createLabel({
 	color:'#999',
-	text:'Je schoolnr: ',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	text:'Beschrijving:',
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
-	top:110,
+	top:70,
+	left:10
+});
+
+var label6 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'Snummer:',
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
+	width:'auto',
+	top:180,
+	left:10
+});
+
+var label7 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'gebouw:',
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
+	width:'auto',
+	top:230,
+	left:10
+});
+
+var label8 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'verdiep:',
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
+	width:'auto',
+	top:280,
+	left:10
+});
+
+var label9 = Titanium.UI.createLabel({
+	color:'#999',
+	text:'lokaal:',
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
+	width:'auto',
+	top:330,
 	left:10
 });
 
 
 var buttonVolgendeStap = Titanium.UI.createButton({
-	title:'Volgende',
+	title:'Bevestigen',
 	top:380,
 	right:15
 });
 
 var buttonVorigeStap = Titanium.UI.createButton({
-	title:'Vorige',
+	title:'Annuleren',
 	top:380,
 	left:15
 });
@@ -56,6 +92,17 @@ winOverzicht.add(buttonVorigeStap);
 winOverzicht.add(label3);
 winOverzicht.add(label4);
 winOverzicht.add(label5);
+winOverzicht.add(label6);
+winOverzicht.add(label7);
+winOverzicht.add(label8);
+winOverzicht.add(label9);
+
+label4.text = "Probleem: " +winOverzicht.name;
+label5.text = "beschrijving: " + winOverzicht.description; 
+label6.text = "Snummer: "+winOverzicht.schoolNumber;
+label7.text = winOverzicht.gebouwProblem;
+label8.text = winOverzicht.verdiepProblem;
+label9.text = winOverzicht.lokaalProblem;
 
 
 buttonVolgendeStap.addEventListener('click',function(e)
@@ -68,6 +115,6 @@ buttonVolgendeStap.addEventListener('click',function(e)
 buttonVorigeStap.addEventListener('click',function(e)
 {
 	//window openen
-	win3.open();
+	winmain.open();
 	winOverzicht.close();
 });

@@ -179,6 +179,7 @@ nodeTable.addEventListener("click", function(e){
  	win2.gebouwProblem = labelItemGebouw.text;
  	win2.verdiepProblem = labelItemVerdiep.text;
  	win2.lokaalProblem = labelItemLokaal.text;
+ 	win2.omschrijvingProblem = e.rowData.omschrijving;
 	win2.open();
 });
 

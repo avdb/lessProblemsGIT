@@ -3,7 +3,7 @@ var win2 = Ti.UI.currentWindow;
 
 var label3 = Titanium.UI.createLabel({
 	color:'black',
-	text:'Nieuw Probleem melden',
+	text:'Probleem melden',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:5,
@@ -107,24 +107,32 @@ labelItemGebouw.text = win2.gebouwProblem;
 labelItemVerdiep.text = win2.verdiepProblem;
 labelItemLokaal.text = win2.lokaalProblem;
 txtName.value = win2.titleProblem;
+txtOmschrijving.value = win2.omschrijvingProblem;
 
-var name;
-var schoolNumber;
-var description;
-
+	var name;
+	var schoolNumber;
+    var description; 
+ 	var gebouwProblem;
+ 	var verdiepProblem;
+ 	var lokaalProblem;
+ 	var omschrijvingProblem;
+ 	
 buttonVolgendeStap.addEventListener('click',function(e)
 {
 	//variables om data naar overzicht en submit te sturen
 	
 	if (txtName.value != "" && txtSchoolNummer != "" && txtOmschrijving != "")
 	{
-		name = txtName.value;
-		schoolNumber = txtSchoolNummer.value;
-		description = txtOmschrijving.value;
+		winOverzicht.name = txtName.value;
+		winOverzicht.schoolNumber = txtSchoolNummer.value;
+		winOverzicht.description = txtOmschrijving.value;
+ 		winOverzicht.gebouwProblem = labelItemGebouw.text;
+ 		winOverzicht.verdiepProblem = labelItemVerdiep.text;
+ 		winOverzicht.lokaalProblem = labelItemLokaal.text;
 	}
 	
 	//window openen
-	win3.open();
+	winOverzicht.open();
 	win2.close();
 });
 
@@ -139,7 +147,7 @@ var winmain = Titanium.UI.createWindow({
     backgroundColor:'#fff',
     url:'app.js'
 });
-var win3 = Titanium.UI.createWindow({  
+var winOverzicht= Titanium.UI.createWindow({  
     title:'Overzicht',
     backgroundColor:'#fff',
     url:'overzicht.js'
