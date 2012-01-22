@@ -221,14 +221,18 @@ var button = Titanium.UI.createButton({
 	title:'Nieuw Probleem',
 	color: '#A90329',
 	align: 'center',
-	top:380,
+	top:45,
+	right:20
 });
 
 
 button.addEventListener('click',function(e)
 {
 	//variables meesturen
-	win2.titleProblem = labelItem.text;
+	win2.titleProblem = labelItem.text;  
+ 	win2.gebouwProblem = labelItemGebouw.text;
+ 	win2.verdiepProblem = labelItemVerdiep.text;
+ 	win2.lokaalProblem = labelItemLokaal.text;
 	//window openen
 	win2.open();
 });
