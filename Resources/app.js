@@ -175,6 +175,10 @@ nodeTable.addEventListener("click", function(e){
 	labelItemVerdiep.text = "verdiep: "+e.rowData.verdiep;
 	labelItemLokaal.text = "lokaal: "+e.rowData.lokaal;
 	
+	win2.titleProblem = labelItem.text;  
+ 	win2.gebouwProblem = labelItemGebouw.text;
+ 	win2.verdiepProblem = labelItemVerdiep.text;
+ 	win2.lokaalProblem = labelItemLokaal.text;
 	win2.open();
 });
 
