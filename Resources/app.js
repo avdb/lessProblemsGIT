@@ -98,6 +98,7 @@ pickerLokaal.add(dataLokaal);
 pickerGebouw.addEventListener ('change',function()
   {
     labelGebouw.text = pickerGebouw.getSelectedRow(0).title;
+    labelItemGebouw.text = pickerGebouw.getSelectedRow(0).title;
     winmain.remove(pickerGebouw);
     winmain.add(pickerVerdiep);
     winmain.add(labelVerdiep);
@@ -112,6 +113,7 @@ pickerVerdiep.addEventListener ('change',function()
   	pickerVerdiep.top = 85;
     winmain.add(pickerVerdiep);
     labelVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
+    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
     winmain.remove(pickerVerdiep);
     winmain.add(labelLokaal);
     winmain.add(pickerLokaal);
@@ -124,9 +126,11 @@ pickerVerdiep.addEventListener ('change',function()
 pickerLokaal.addEventListener ('change',function()
   {
   	pickerLokaal.top = 115;
-    labelLokaal.text = pickerLokaal.getSelectedRow(0).title;
+    labelLokaal.text = pickerLokaal.getSelectedRow(0).title;    
+    labelItemLokaal.text = pickerLokaal.getSelectedRow(0).title;
     winmain.remove(pickerLokaal);
     
+    winmain.add(button);
     //lijst sorteren op lokaal
     // send the data
 	xhrLokaal.send();
@@ -140,7 +144,7 @@ winmain.add(pickerGebouw);
 var label1_4 = Titanium.UI.createLabel({
 	text:'Bestaande Problemen',
 	color: 'black',
-	backgroundColor: 'grey',
+	backgroundColor: '#999',
 	font:{fontSize:21,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
@@ -170,6 +174,8 @@ nodeTable.addEventListener("click", function(e){
 	labelItemGebouw.text = "gebouw: "+e.rowData.gebouw;
 	labelItemVerdiep.text = "verdiep: "+e.rowData.verdiep;
 	labelItemLokaal.text = "lokaal: "+e.rowData.lokaal;
+	
+	win2.open();
 });
 
 
@@ -236,8 +242,6 @@ button.addEventListener('click',function(e)
 	//window openen
 	win2.open();
 });
-
-winmain.add(button);
 
 winmain.open();
 
