@@ -53,9 +53,9 @@ var pickerVerdiep = Ti.UI.createPicker({
 });
 
 var dataVerdiep = [];
-dataVerdiep[0]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'v1'});
-dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'v2'});
-dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'v3'});
+dataVerdiep[0]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'1'});
+dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'2'});
+dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'3'});
 
 // turn on the selection indicator (off by default)
 pickerVerdiep.selectionIndicator = true;
@@ -79,16 +79,16 @@ var pickerLokaal = Ti.UI.createPicker({
 });
 
 var dataLokaal = [];
-dataLokaal[0]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'l1'});
-dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'l2'});
-dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'l3'});
-dataLokaal[3]=Ti.UI.createPickerRow({title:'Lokaal 4',custom_item:'l4'});
-dataLokaal[4]=Ti.UI.createPickerRow({title:'Lokaal 5',custom_item:'l5'});
-dataLokaal[5]=Ti.UI.createPickerRow({title:'Lokaal 6',custom_item:'l6'});
-dataLokaal[6]=Ti.UI.createPickerRow({title:'Lokaal 7',custom_item:'l7'});
-dataLokaal[7]=Ti.UI.createPickerRow({title:'Lokaal 8',custom_item:'l8'});
-dataLokaal[8]=Ti.UI.createPickerRow({title:'Lokaal 9',custom_item:'l9'});
-dataLokaal[9]=Ti.UI.createPickerRow({title:'Lokaal 10',custom_item:'l10'});
+dataLokaal[0]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'1'});
+dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'2'});
+dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'3'});
+dataLokaal[3]=Ti.UI.createPickerRow({title:'Lokaal 4',custom_item:'4'});
+dataLokaal[4]=Ti.UI.createPickerRow({title:'Lokaal 5',custom_item:'5'});
+dataLokaal[5]=Ti.UI.createPickerRow({title:'Lokaal 6',custom_item:'6'});
+dataLokaal[6]=Ti.UI.createPickerRow({title:'Lokaal 7',custom_item:'7'});
+dataLokaal[7]=Ti.UI.createPickerRow({title:'Lokaal 8',custom_item:'8'});
+dataLokaal[8]=Ti.UI.createPickerRow({title:'Lokaal 9',custom_item:'9'});
+dataLokaal[9]=Ti.UI.createPickerRow({title:'Lokaal 10',custom_item:'10'});
 
 // turn on the selection indicator (off by default)
 pickerLokaal.selectionIndicator = true;
@@ -112,8 +112,8 @@ pickerVerdiep.addEventListener ('change',function()
   {
   	pickerVerdiep.top = 85;
     winmain.add(pickerVerdiep);
-    labelVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
-    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).title;
+    labelVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
+    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
     winmain.remove(pickerVerdiep);
     winmain.add(labelLokaal);
     winmain.add(pickerLokaal);
@@ -126,8 +126,8 @@ pickerVerdiep.addEventListener ('change',function()
 pickerLokaal.addEventListener ('change',function()
   {
   	pickerLokaal.top = 115;
-    labelLokaal.text = pickerLokaal.getSelectedRow(0).title;    
-    labelItemLokaal.text = pickerLokaal.getSelectedRow(0).title;
+    labelLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;    
+    labelItemLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;
     winmain.remove(pickerLokaal);
     
     winmain.add(button);
@@ -171,15 +171,16 @@ var nodePath;
 //item van lijst wordt geselecteerd --> extra info tonen.
 nodeTable.addEventListener("click", function(e){
 	labelItem.text = e.rowData.title;
-	labelItemGebouw.text = "gebouw: "+e.rowData.gebouw;
-	labelItemVerdiep.text = "verdiep: "+e.rowData.verdiep;
-	labelItemLokaal.text = "lokaal: "+e.rowData.lokaal;
+	labelItemGebouw.text = e.rowData.gebouw;
+	labelItemVerdiep.text = e.rowData.verdiep;
+	labelItemLokaal.text = e.rowData.lokaal;
 	
-	win2.titleProblem = labelItem.text;  
- 	win2.gebouwProblem = labelItemGebouw.text;
- 	win2.verdiepProblem = labelItemVerdiep.text;
- 	win2.lokaalProblem = labelItemLokaal.text;
+	win2.titleProblem = e.rowData.title;  
+ 	win2.gebouwProblem = e.rowData.gebouw;
+ 	win2.verdiepProblem = e.rowData.verdiep;
+ 	win2.lokaalProblem = e.rowData.lokaal;
  	win2.omschrijvingProblem = e.rowData.omschrijving;
+ 	win2.sNummerProbleem = e.rowData.snummer;
 	win2.open();
 });
 
@@ -240,7 +241,6 @@ var button = Titanium.UI.createButton({
 button.addEventListener('click',function(e)
 {
 	//variables meesturen
-	win2.titleProblem = labelItem.text;  
  	win2.gebouwProblem = labelItemGebouw.text;
  	win2.verdiepProblem = labelItemVerdiep.text;
  	win2.lokaalProblem = labelItemLokaal.text;
@@ -313,6 +313,9 @@ xhrAlleNodes.onload = function()
 		      //lokaal
 		      lokaalInfo = response.field_lokaal[i];
 		      
+		      //sNummer
+		      sNummerInfo = response.field_snummer[i];
+		      
 		      //lijst sorteren als picker is aangeduid
 		      
 		      rowNode = Ti.UI.createTableViewRow({
@@ -321,6 +324,7 @@ xhrAlleNodes.onload = function()
 		        gebouw : gebouwInfo[0].value,
 		        verdiep : verdiepInfo[0].value,
 		        lokaal : lokaalInfo[0].value,
+		        snummer: sNummerInfo[0].value,
 		        path: response.uri
 		      });
 		       alleNodes.push(rowNode);
@@ -590,59 +594,3 @@ xhrLokaal .onload = function()
   };
 // open the client
 xhrLokaal.open('GET','http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
-
-
-
-//					drupal service post
-//-------------------------------------------------------
-
-
- 
-/*
-	//posten naar drupal service:
-	var xhrTest = Titanium.Network.createHTTPClient();
-
-	var loginObject = {
-		"title" : labelItem.text,
-		"type" : "node",
-		"body" : {
-			"und" : [{
-				"value" : "testen posten via titanium",
-				"summary" : "",
-				"format" : "filtered_html",
-				"safe_value" : "<p>Beamer wil niet meer afsluiten.</p>\n",
-				"safe_summary" : ""
-			}]
-		},
-		"field_gebouw" : {
-			"und" : [{
-				"value" : "" + gebouw[0].value + "",
-				"format" : null,
-				"safe_value" : "De vest"
-			}]
-		},
-		"field_verdiep" : {
-			"und" : [{
-				"value" : "" + verdiep[0].value + "",
-				"format" : null,
-				"safe_value" : "3"
-			}]
-		},
-		"field_lokaal" : {
-			"und" : [{
-				"value" : "" + lokaal[0].value + "",
-				"format" : null,
-				"safe_value" : "12"
-			}]
-		}
-	}
-	var loginString = JSON.stringify(loginObject);
-	xhrTest.open('POST', 'http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
-	// set the content-type header
-	xhrTest.setRequestHeader('content-type', 'application/json');
-
-	// send the data
-	xhrTest.send(loginString);
-	
------ einde posten naar drupal service!----
-*/

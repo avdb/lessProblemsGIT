@@ -28,7 +28,9 @@ buttonVorigeStap.addEventListener('click',function(e)
 });
 
 var win3 = Titanium.UI.createWindow({  
-    title:'Overzicht',
+    title:'Home',
     backgroundColor:'#fff',
-    url:'overzicht.js'
+    url:'app.js'
 });
+
+

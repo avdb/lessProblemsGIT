@@ -108,6 +108,7 @@ labelItemVerdiep.text = win2.verdiepProblem;
 labelItemLokaal.text = win2.lokaalProblem;
 txtName.value = win2.titleProblem;
 txtOmschrijving.value = win2.omschrijvingProblem;
+txtSchoolNummer.value = win2.sNummerProbleem;
 
 	var name;
 	var schoolNumber;
@@ -126,9 +127,9 @@ buttonVolgendeStap.addEventListener('click',function(e)
 		winOverzicht.name = txtName.value;
 		winOverzicht.schoolNumber = txtSchoolNummer.value;
 		winOverzicht.description = txtOmschrijving.value;
- 		winOverzicht.gebouwProblem = labelItemGebouw.text;
- 		winOverzicht.verdiepProblem = labelItemVerdiep.text;
- 		winOverzicht.lokaalProblem = labelItemLokaal.text;
+ 		winOverzicht.gebouwProblem = win2.gebouwProblem;;
+ 		winOverzicht.verdiepProblem = win2.verdiepProblem;;
+ 		winOverzicht.lokaalProblem = win2.lokaalProblem;;
 	}
 	
 	//window openen

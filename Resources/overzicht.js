@@ -98,11 +98,11 @@ winOverzicht.add(label8);
 winOverzicht.add(label9);
 
 label4.text = "Probleem: " +winOverzicht.name;
-label5.text = "beschrijving: " + winOverzicht.description; 
+label5.text = "Beschrijving: " + winOverzicht.description; 
 label6.text = "Snummer: "+winOverzicht.schoolNumber;
-label7.text = winOverzicht.gebouwProblem;
-label8.text = winOverzicht.verdiepProblem;
-label9.text = winOverzicht.lokaalProblem;
+label7.text = "Gebouw: "+winOverzicht.gebouwProblem;
+label8.text = "Verdiep: "+winOverzicht.verdiepProblem;
+label9.text = "Lokaal: "+winOverzicht.lokaalProblem;
 
 
 buttonVolgendeStap.addEventListener('click',function(e)
@@ -110,6 +110,62 @@ buttonVolgendeStap.addEventListener('click',function(e)
 	//window openen
 	win4.open();
 	winOverzicht.close();
+	
+	// senden nr drupal!
+	//					drupal service post
+//-------------------------------------------------------
+
+	//posten naar drupal service:
+	var xhrTest = Titanium.Network.createHTTPClient();
+
+	var loginObject = {
+		"title" : winOverzicht.name,
+		"type" : "node",
+		"body" : {
+			"und" : [{
+				"value" : winOverzicht.description,
+				"summary" : "",
+				"format" : "filtered_html",
+				"safe_value" : "<p>"+winOverzicht.description+"</p>\n",
+				"safe_summary" : ""
+			}]
+		},
+		"field_snummer" : {
+			"und" : [{
+				"value" : winOverzicht.schoolNumber,
+				"format" : null,
+				"safe_value" : winOverzicht.schoolNumber
+			}]
+		},
+		"field_gebouw" : {
+			"und" : [{
+				"value" : winOverzicht.gebouwProblem,
+				"format" : null,
+				"safe_value" : winOverzicht.gebouwProblem
+			}]
+		},
+		"field_verdiep" : {
+			"und" : [{
+				"value" : winOverzicht.verdiepProblem,
+				"format" : null,
+				"safe_value" : winOverzicht.verdiepProblem
+			}]
+		},
+		"field_lokaal" : {
+			"und" : [{
+				"value" : winOverzicht.lokaalProblem,
+				"format" : null,
+				"safe_value" : winOverzicht.lokaalProblem
+			}]
+		}
+	}
+	var loginString = JSON.stringify(loginObject);
+	xhrTest.open('POST', 'http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
+	// set the content-type header
+	xhrTest.setRequestHeader('content-type', 'application/json');
+
+	// send the data
+	xhrTest.send(loginString);
 });
 
 buttonVorigeStap.addEventListener('click',function(e)
