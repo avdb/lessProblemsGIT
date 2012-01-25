@@ -491,7 +491,7 @@ xhrVerdiep.onload = function()
 		        path: response.uri
 		      });
 		      //checken of verdiep overeen komt
-		      if(labelGebouw.text == gebouwInfo[0].value && labelVerdiep.text == ("Verdiep "+verdiepInfo[0].value)){
+		      if(labelGebouw.text == gebouwInfo[0].value && labelVerdiep.text == (verdiepInfo[0].value)){
 		       alleNodesVerdiep.push(rowNodeVerdiep);
 		      }
 		    }
@@ -573,7 +573,7 @@ xhrLokaal .onload = function()
 		        path: response.uri
 		      });
 		      //checken of verdiep overeen komt
-		      if(labelGebouw.text == gebouwInfo[0].value && labelVerdiep.text == ("Verdiep "+verdiepInfo[0].value) && labelLokaal.text == ("Lokaal "+lokaalInfo[0].value)){
+		      if(labelGebouw.text == gebouwInfo[0].value && labelVerdiep.text == (verdiepInfo[0].value) && labelLokaal.text == (lokaalInfo[0].value)){
 		       alleNodesLokaal.push(rowNodeLokaal);
 		      }
 		    }
