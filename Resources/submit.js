@@ -1,7 +1,7 @@
 var win2 = Ti.UI.currentWindow;
 
 var label3 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'De melding is verzonden en zal zo spoedig mogelijk behandeld worden. Hartelijk dank voor uw medewerking',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -13,6 +13,7 @@ var label3 = Titanium.UI.createLabel({
 
 var buttonVorigeStap = Titanium.UI.createButton({
 	title:'Home',
+	color: '#4c2d4e',
 	top:380,
 	left:55
 });

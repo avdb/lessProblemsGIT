@@ -2,17 +2,17 @@ var winOverzicht = Ti.UI.currentWindow;
 
 var winmain = Titanium.UI.createWindow({  
     title:'Main',
-    backgroundColor:'#fff',
+    backgroundColor:'#393838',
     url:'app.js'
 });
 var win4 = Titanium.UI.createWindow({  
     title:'Einde',
-    backgroundColor:'#fff',
+    backgroundColor:'#393838',
     url:'submit.js'
 });
 
 var label3 = Titanium.UI.createLabel({
-	color:'black',
+	color:'#fff',
 	text:'Overzicht melding',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -21,7 +21,7 @@ var label3 = Titanium.UI.createLabel({
 });
 
 var label4 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'Probleem:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -30,7 +30,7 @@ var label4 = Titanium.UI.createLabel({
 });
 
 var label5 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'Beschrijving:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -39,7 +39,7 @@ var label5 = Titanium.UI.createLabel({
 });
 
 var label6 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'Snummer:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -48,7 +48,7 @@ var label6 = Titanium.UI.createLabel({
 });
 
 var label7 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'gebouw:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -57,7 +57,7 @@ var label7 = Titanium.UI.createLabel({
 });
 
 var label8 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'verdiep:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -66,7 +66,7 @@ var label8 = Titanium.UI.createLabel({
 });
 
 var label9 = Titanium.UI.createLabel({
-	color:'#999',
+	color:'#4fc6dc',
 	text:'lokaal:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -77,12 +77,14 @@ var label9 = Titanium.UI.createLabel({
 
 var buttonVolgendeStap = Titanium.UI.createButton({
 	title:'Bevestigen',
+	color: '#4c2d4e',
 	top:380,
 	right:15
 });
 
 var buttonVorigeStap = Titanium.UI.createButton({
 	title:'Annuleren',
+	color: '#4c2d4e',
 	top:380,
 	left:15
 });

@@ -2,7 +2,7 @@ var win2 = Ti.UI.currentWindow;
 
 
 var label3 = Titanium.UI.createLabel({
-	color:'black',
+	color:'#fff',
 	text:'Probleem melden',
 	font:{fontSize:20,fontFamily:'Helvetica Neue'},
 	width:'auto',
@@ -11,7 +11,7 @@ var label3 = Titanium.UI.createLabel({
 });
 
 var labelItemGebouw = Titanium.UI.createLabel({
-	color: 'black',
+	color: '#4fc6dc',
 	font:{fontSize:14,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
@@ -19,7 +19,7 @@ var labelItemGebouw = Titanium.UI.createLabel({
 	left:10
 });
 var labelItemVerdiep = Titanium.UI.createLabel({
-	color: 'black',
+	color: '#4fc6dc',
 	font:{fontSize:14,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
@@ -27,7 +27,7 @@ var labelItemVerdiep = Titanium.UI.createLabel({
 	left:200
 });
 var labelItemLokaal = Titanium.UI.createLabel({
-	color: 'black',
+	color: '#4fc6dc',
 	font:{fontSize:14,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
@@ -73,12 +73,14 @@ var txtSchoolNummer = Titanium.UI.createTextField({
 
 var buttonVolgendeStap = Titanium.UI.createButton({
 	title:'Volgende',
+	color: '#4c2d4e',
 	top:380,
 	right:15
 });
 
 var buttonVorigeStap = Titanium.UI.createButton({
 	title:'Vorige',
+	color: '#4c2d4e',
 	top:380,
 	left:15
 });
@@ -145,11 +147,11 @@ buttonVorigeStap.addEventListener('click',function(e)
 });
 var winmain = Titanium.UI.createWindow({  
     title:'Main',
-    backgroundColor:'#fff',
+    backgroundColor:'#393838',
     url:'app.js'
 });
 var winOverzicht= Titanium.UI.createWindow({  
     title:'Overzicht',
-    backgroundColor:'#fff',
+    backgroundColor:'#393838',
     url:'overzicht.js'
 });
