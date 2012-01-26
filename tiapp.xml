@@ -15,7 +15,7 @@
     <url>http://</url>
     <description>not specified</description>
     <copyright>2012 by an</copyright>
-    <icon>appicon.png</icon>
+    <icon>default_app_logo.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>

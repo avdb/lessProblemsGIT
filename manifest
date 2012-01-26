@@ -1,8 +1,8 @@
-#appname: Hello World
-#publisher: an
-#url: http://
-#image: appicon.png
-#appid: com.lessius.avdb
-#desc: undefined
-#type: ipad
-#guid: 47a55d37-be69-4418-bbbe-fd78ff16d437
+#appname:LessProblems
+#publisher:an&jeroen
+#url:http://
+#image:default_app_logo.png
+#appid:com.lessius.avdb
+#desc:not specified
+#type:Android
+#guid:47a55d37-be69-4418-bbbe-fd78ff16d437
