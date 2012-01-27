@@ -8,8 +8,10 @@ Logfile initialized
 [DEBUG] waited 0.040000 seconds on emulator to get ready
 [DEBUG] com.lessius.avdb installed? False
 [INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\Resources\probleem.js => C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\build\android\bin\assets\Resources\probleem.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
+[TRACE] COPYING FILE: C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\Resources\android\images\res-notlong-port-hdpi\Default.png => C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\build\android\res\drawable-notlong-port-hdpi\default_d44e27d97b.png
 [DEBUG] copying app icon: C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\build\android\bin\assets\Resources\default_app_logo.png
 [DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\Resources\android\images\res-long-land-hdpi\default.png
@@ -65,6 +67,7 @@ Logfile initialized
 [DEBUG] from resource zip => res/drawable-notlong-land-hdpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-land-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-land-mdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-hdpi/default_d44e27d97b.png
 [DEBUG] from resource zip => res/drawable-notlong-port-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-mdpi/background.png
 [DEBUG] from JAR C:\Users\Sosaa\AppData\Roaming\Titanium\mobilesdk\win32\1.8.0.1\android\modules\titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.js
@@ -86,6 +89,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.040000 seconds on emulator to get ready
+[DEBUG] waited 0.060000 seconds on emulator to get ready
 [INFO] Installing application on emulator
 [INFO] Application installed. Launch from drawer on Home Screen

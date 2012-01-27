@@ -24,7 +24,7 @@ var labelItemVerdiep = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto',
 	top:65,
-	left:110
+	left:100
 });
 var labelItemLokaal = Titanium.UI.createLabel({
 	color: '#4fc6dc',
@@ -32,7 +32,7 @@ var labelItemLokaal = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto',
 	top:65,
-	left:150
+	left:185
 
 });
 
