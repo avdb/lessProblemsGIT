@@ -26,6 +26,7 @@ var labelItemVerdiep = Titanium.UI.createLabel({
 	top:65,
 	left:100
 });
+
 var labelItemLokaal = Titanium.UI.createLabel({
 	color: '#4fc6dc',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
@@ -94,11 +95,9 @@ win2.add(txtSchoolNummer);
 
 win2.add(labelItemGebouw);
 win2.add(labelItemVerdiep);
-win2.add(labelItemLokaal);
 //variable in label stoppen
 labelItemGebouw.text = win2.gebouwProblem;
-labelItemVerdiep.text = win2.verdiepProblem;
-labelItemLokaal.text = win2.lokaalProblem;
+labelItemVerdiep.text = win2.verdiepProblem+"/"+win2.lokaalProblem;
 txtName.value = win2.titleProblem;
 txtOmschrijving.value = win2.omschrijvingProblem;
 txtSchoolNummer.value = win2.sNummerProbleem;

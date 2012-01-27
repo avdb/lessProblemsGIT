@@ -45,7 +45,7 @@ dataGebouw[3]=Ti.UI.createPickerRow({title:'Kruidtuin',custom_item:'k'});
 // turn on the selection indicator (off by default)
 pickerGebouw.add(dataGebouw);
 
-var labelVerdiep = Titanium.UI.createLabel({
+var labelVerdiepItem = Titanium.UI.createLabel({
 	color:'#fff',
 	text:'Verdiep',
 	font:{fontSize:22,fontFamily:'Helvetica Neue'},
@@ -54,7 +54,15 @@ var labelVerdiep = Titanium.UI.createLabel({
 	top:75,
 	left:20
 });
-
+var labelVerdiep = Titanium.UI.createLabel({
+	color:'#4fc6dc',
+	text:'Verdiep',
+	font:{fontSize:22,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:75,
+	left:110
+});
 
 var pickerVerdiep = Ti.UI.createPicker({
 	top:15,
@@ -64,16 +72,16 @@ var pickerVerdiep = Ti.UI.createPicker({
 var dataVerdiep = [];
 
 dataVerdiep[0]=Ti.UI.createPickerRow({title:'Verdiep',custom_item:'0'});
-dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'Verdiep 1'});
-dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'Verdiep 2'});
-dataVerdiep[3]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'Verdiep 3'});
+dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'1'});
+dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'2'});
+dataVerdiep[3]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'3'});
 
 // turn on the selection indicator (off by default)
 pickerVerdiep.selectionIndicator = true;
 pickerVerdiep.add(dataVerdiep);
 
 
-var labelLokaal = Titanium.UI.createLabel({
+var labelLokaalItem = Titanium.UI.createLabel({
 	color:'#fff',
 	text:'Lokaal',
 	font:{fontSize:22,fontFamily:'Helvetica Neue'},
@@ -82,7 +90,15 @@ var labelLokaal = Titanium.UI.createLabel({
 	top:100,
 	left:20
 });
-
+var labelLokaal = Titanium.UI.createLabel({
+	color:'#4fc6dc',
+	text:'Verdiep',
+	font:{fontSize:22,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
+	width:'auto',
+	top:100,
+	left:110
+});
 var pickerLokaal = Ti.UI.createPicker({
 	top:15,
 	left:195
@@ -90,16 +106,16 @@ var pickerLokaal = Ti.UI.createPicker({
 
 var dataLokaal = [];
 dataLokaal[0]=Ti.UI.createPickerRow({title:'Lokaal',custom_item:'0'});
-dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'Lokaal 1'});
-dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'Lokaal 2'});
-dataLokaal[3]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'Lokaal 3'});
-dataLokaal[4]=Ti.UI.createPickerRow({title:'Lokaal 4',custom_item:'Lokaal 4'});
-dataLokaal[5]=Ti.UI.createPickerRow({title:'Lokaal 5',custom_item:'Lokaal 5'});
-dataLokaal[6]=Ti.UI.createPickerRow({title:'Lokaal 6',custom_item:'Lokaal 6'});
-dataLokaal[7]=Ti.UI.createPickerRow({title:'Lokaal 7',custom_item:'Lokaal 7'});
-dataLokaal[8]=Ti.UI.createPickerRow({title:'Lokaal 8',custom_item:'Lokaal 8'});
-dataLokaal[9]=Ti.UI.createPickerRow({title:'Lokaal 9',custom_item:'Lokaal 9'});
-dataLokaal[10]=Ti.UI.createPickerRow({title:'Lokaal 10',custom_item:'Lokaal 10'});
+dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'1'});
+dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'2'});
+dataLokaal[3]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'3'});
+dataLokaal[4]=Ti.UI.createPickerRow({title:'Lokaal 4',custom_item:'4'});
+dataLokaal[5]=Ti.UI.createPickerRow({title:'Lokaal 5',custom_item:'5'});
+dataLokaal[6]=Ti.UI.createPickerRow({title:'Lokaal 6',custom_item:'6'});
+dataLokaal[7]=Ti.UI.createPickerRow({title:'Lokaal 7',custom_item:'7'});
+dataLokaal[8]=Ti.UI.createPickerRow({title:'Lokaal 8',custom_item:'8'});
+dataLokaal[9]=Ti.UI.createPickerRow({title:'Lokaal 9',custom_item:'9'});
+dataLokaal[10]=Ti.UI.createPickerRow({title:'Lokaal 10',custom_item:'10'});
 
 // turn on the selection indicator (off by default)
 pickerLokaal.selectionIndicator = true;
@@ -112,7 +128,7 @@ pickerGebouw.addEventListener ('change',function()
     labelGebouw.color = '#4fc6dc';
     winmain.remove(pickerGebouw);
     winmain.add(pickerVerdiep);
-    winmain.add(labelVerdiep);
+    winmain.add(labelVerdiepItem);
 
     
     //lijst sorteren op gebouw
@@ -123,10 +139,12 @@ pickerGebouw.addEventListener ('change',function()
 pickerVerdiep.addEventListener ('change',function()
   {
     winmain.add(pickerVerdiep);
+    labelVerdiepItem.text = "Verdiep";
     labelVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
-    labelVerdiep.color = '#4fc6dc';
+    labelVerdiepItem.color = '#4fc6dc';
+    winmain.add(labelVerdiep);
     winmain.remove(pickerVerdiep);
-    winmain.add(labelLokaal);
+    winmain.add(labelLokaalItem);
     winmain.add(pickerLokaal);
     
     //lijst sorteren op verdiep
@@ -136,8 +154,10 @@ pickerVerdiep.addEventListener ('change',function()
  
 pickerLokaal.addEventListener ('change',function()
   {
-    labelLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;    
-    labelLokaal.color = '#4fc6dc';
+  	labelLokaalItem.text = "Lokaal";
+    labelLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;
+    labelLokaalItem.color = '#4fc6dc';
+    winmain.add(labelLokaal);
     winmain.remove(pickerLokaal);
     
     winmain.add(button);
