@@ -1,16 +1,17 @@
 Logfile initialized
 [INFO] logfile = C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\build.log
-[DEBUG] C:\Users\Sosaa\AppData\Roaming\Titanium\mobilesdk\win32\1.8.0.1\android\builder.py simulator Less Problems C:\Program Files\Android\android-sdk C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems com.lessius.avdb 4 WVGA800
+[DEBUG] C:\Users\Sosaa\AppData\Roaming\Titanium\mobilesdk\win32\1.8.0.1\android\builder.py simulator Less Problems C:\Program Files\Android\android-sdk C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems com.lessius.avdb 6 HVGA
 [INFO] Building Less Problems for Android ... one moment
 [INFO] Titanium SDK version: 1.8.0.1 (12/22/11 13:09 fbdc96f)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.032000 seconds on emulator to get ready
+[DEBUG] waited 0.035000 seconds on emulator to get ready
 [DEBUG] com.lessius.avdb installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying project resources..
 [TRACE] COPYING MODIFIED FILE: C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\Resources\app.js => C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\build\android\bin\assets\Resources\app.js
+[TRACE] COPYING MODIFIED FILE: C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\Resources\overzicht.js => C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\build\android\bin\assets\Resources\overzicht.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-long-land-hdpi splash screen at C:\Users\Sosaa\My Documents\Titanium Studio Workspace\lessProblems\Resources\android\images\res-long-land-hdpi\default.png

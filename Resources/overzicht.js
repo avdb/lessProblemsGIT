@@ -28,7 +28,7 @@ var label4 = Titanium.UI.createLabel({
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:65,
-	left:10
+	left:20
 });
 
 var label5 = Titanium.UI.createLabel({
@@ -37,7 +37,7 @@ var label5 = Titanium.UI.createLabel({
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:110,
-	left:10
+	left:20
 });
 
 var label6 = Titanium.UI.createLabel({
@@ -46,7 +46,7 @@ var label6 = Titanium.UI.createLabel({
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:180,
-	left:10
+	left:20
 });
 
 var label7 = Titanium.UI.createLabel({
@@ -55,7 +55,7 @@ var label7 = Titanium.UI.createLabel({
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:230,
-	left:10
+	left:20
 });
 
 var label8 = Titanium.UI.createLabel({
@@ -63,7 +63,7 @@ var label8 = Titanium.UI.createLabel({
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:280,
-	left:10
+	left:20
 });
 
 var label9 = Titanium.UI.createLabel({
@@ -71,7 +71,7 @@ var label9 = Titanium.UI.createLabel({
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:330,
-	left:10
+	left:20
 });
 
 

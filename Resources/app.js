@@ -32,8 +32,8 @@ var labelGebouw = Titanium.UI.createLabel({
 
 
 var pickerGebouw = Ti.UI.createPicker({
-	top:25,
-	left:250
+	top:15,
+	left:195
 });
 
 var dataGebouw = [];
@@ -57,8 +57,8 @@ var labelVerdiep = Titanium.UI.createLabel({
 
 
 var pickerVerdiep = Ti.UI.createPicker({
-	top:25,
-	left:250
+	top:15,
+	left:195
 });
 
 var dataVerdiep = [];
@@ -84,8 +84,8 @@ var labelLokaal = Titanium.UI.createLabel({
 });
 
 var pickerLokaal = Ti.UI.createPicker({
-	top:25,
-	left:250
+	top:15,
+	left:195
 });
 
 var dataLokaal = [];
@@ -165,9 +165,9 @@ var label1_4 = Titanium.UI.createLabel({
 var nodeTable = Ti.UI.createTableView({
 	color: '#fff',
   	height: '70%',
-  	width: '80%',
-  	align: 'center',
-  	top:180
+  	width: 275,
+  	top:185,
+  	left: 20
   	
 });
 
@@ -195,7 +195,7 @@ nodeTable.addEventListener("click", function(e){
 
 //knop nieuw probleem
 var button = Titanium.UI.createButton({
-	title:'Nieuwe melding',
+	title:'Nieuwe Probleem',
 	color: '#4c2d4e',
 	align: 'center',
 	top:10,

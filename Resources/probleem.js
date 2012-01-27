@@ -16,7 +16,7 @@ var labelItemGebouw = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto',
 	top:65,
-	left:40
+	left:20
 });
 var labelItemVerdiep = Titanium.UI.createLabel({
 	color: '#4fc6dc',
@@ -24,7 +24,7 @@ var labelItemVerdiep = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto',
 	top:65,
-	left:130
+	left:110
 });
 var labelItemLokaal = Titanium.UI.createLabel({
 	color: '#4fc6dc',
@@ -32,14 +32,14 @@ var labelItemLokaal = Titanium.UI.createLabel({
 	textAlign:'center',
 	width:'auto',
 	top:65,
-	left:230
+	left:150
 
 });
 
 var txtName = Titanium.UI.createTextField({
 	top:100,
-	left: 40,
-	width: 285,
+	left: 20,
+	width: 270,
 	height: 55,
 	hintText : "Benaming probleem",
 	font:{fontSize:16,fontFamily:'Helvetica Neue'},
@@ -49,8 +49,8 @@ var txtName = Titanium.UI.createTextField({
 
 var txtOmschrijving = Titanium.UI.createTextArea({
 	top:160,
-	left: 40,
-	width: 285,
+	left: 20,
+	width: 270,
 	height: 120,
 	hintText : "Omschrijving probleem",
 	font:{fontSize:16,fontFamily:'Helvetica Neue'},
@@ -60,8 +60,8 @@ var txtOmschrijving = Titanium.UI.createTextArea({
 
 var txtSchoolNummer = Titanium.UI.createTextField({
 	top:280,
-	left: 40,
-	width: 285,
+	left: 20,
+	width: 270,
 	height: 55,
 	hintText : "Studenten nummer",
 	font:{fontSize:16,fontFamily:'Helvetica Neue'},
