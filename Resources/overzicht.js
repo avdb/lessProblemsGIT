@@ -11,12 +11,14 @@ var win4 = Titanium.UI.createWindow({
     url:'submit.js'
 });
 
-var label3 = Titanium.UI.createLabel({
-	color:'#fff',
-	text:'Overzicht melding',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+var labelTitle = Titanium.UI.createLabel({
+	text:'Overzicht Melding',
+	color: '#4c2d4e',
+	backgroundColor: '#4fc6dc',
+	font:{fontSize:26,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
 	width:'auto',
-	top:5,
+	top:15,
 	left:10
 });
 
@@ -25,7 +27,7 @@ var label4 = Titanium.UI.createLabel({
 	text:'Probleem:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
-	top:30,
+	top:65,
 	left:10
 });
 
@@ -34,7 +36,7 @@ var label5 = Titanium.UI.createLabel({
 	text:'Beschrijving:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
-	top:70,
+	top:110,
 	left:10
 });
 
@@ -89,7 +91,7 @@ var buttonVorigeStap = Titanium.UI.createButton({
 
 winOverzicht.add(buttonVolgendeStap);
 winOverzicht.add(buttonVorigeStap);
-winOverzicht.add(label3);
+winOverzicht.add(labelTitle);
 winOverzicht.add(label4);
 winOverzicht.add(label5);
 winOverzicht.add(label6);

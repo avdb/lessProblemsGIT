@@ -1,46 +1,46 @@
 var win2 = Ti.UI.currentWindow;
-
-
-var label3 = Titanium.UI.createLabel({
-	color:'#fff',
-	text:'Probleem melden',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+var labelTitle = Titanium.UI.createLabel({
+	text:'Probleem Melden',
+	color: '#4c2d4e',
+	backgroundColor: '#4fc6dc',
+	font:{fontSize:26,fontFamily:'Helvetica Neue'},
+	textAlign:'center',
 	width:'auto',
-	top:5,
+	top:15,
 	left:10
 });
 
 var labelItemGebouw = Titanium.UI.createLabel({
 	color: '#4fc6dc',
-	font:{fontSize:14,fontFamily:'Helvetica Neue'},
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:30,
-	left:10
+	top:65,
+	left:40
 });
 var labelItemVerdiep = Titanium.UI.createLabel({
 	color: '#4fc6dc',
-	font:{fontSize:14,fontFamily:'Helvetica Neue'},
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:30,
-	left:200
+	top:65,
+	left:130
 });
 var labelItemLokaal = Titanium.UI.createLabel({
 	color: '#4fc6dc',
-	font:{fontSize:14,fontFamily:'Helvetica Neue'},
+	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
-	top:50,
-	left:10
+	top:65,
+	left:230
 
 });
 
 var txtName = Titanium.UI.createTextField({
-	top:80,
-	left: 20,
+	top:100,
+	left: 40,
 	width: 285,
-	height: 40,
+	height: 55,
 	hintText : "Benaming probleem",
 	font:{fontSize:16,fontFamily:'Helvetica Neue'},
 	suppressReturn:false
@@ -48,8 +48,8 @@ var txtName = Titanium.UI.createTextField({
 });
 
 var txtOmschrijving = Titanium.UI.createTextArea({
-	top:120,
-	left: 20,
+	top:160,
+	left: 40,
 	width: 285,
 	height: 120,
 	hintText : "Omschrijving probleem",
@@ -59,10 +59,10 @@ var txtOmschrijving = Titanium.UI.createTextArea({
 });
 
 var txtSchoolNummer = Titanium.UI.createTextField({
-	top:240,
-	left: 20,
+	top:280,
+	left: 40,
 	width: 285,
-	height: 40,
+	height: 55,
 	hintText : "Studenten nummer",
 	font:{fontSize:16,fontFamily:'Helvetica Neue'},
 	suppressReturn:false
@@ -87,7 +87,7 @@ var buttonVorigeStap = Titanium.UI.createButton({
 
 win2.add(buttonVolgendeStap);
 win2.add(buttonVorigeStap);
-win2.add(label3);
+win2.add(labelTitle);
 win2.add(txtName);
 win2.add(txtOmschrijving);
 win2.add(txtSchoolNummer);
