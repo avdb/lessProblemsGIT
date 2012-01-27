@@ -12,7 +12,7 @@ var winmain = Titanium.UI.createWindow({
 var labelGebouw = Titanium.UI.createLabel({
 	color:'#fff',
 	text:'Gebouw',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	font:{fontSize:22,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
 	top:15,
@@ -26,20 +26,18 @@ var pickerGebouw = Ti.UI.createPicker({
 });
 
 var dataGebouw = [];
-dataGebouw[0]=Ti.UI.createPickerRow({title:'De vest',custom_item:'v'});
-dataGebouw[1]=Ti.UI.createPickerRow({title:'De ham',custom_item:'h'});
-dataGebouw[2]=Ti.UI.createPickerRow({title:'Kruidtuin',custom_item:'k'});
+dataGebouw[0]=Ti.UI.createPickerRow({title:'Gebouw',custom_item:'g'});
+dataGebouw[1]=Ti.UI.createPickerRow({title:'De vest',custom_item:'v'});
+dataGebouw[2]=Ti.UI.createPickerRow({title:'De ham',custom_item:'h'});
+dataGebouw[3]=Ti.UI.createPickerRow({title:'Kruidtuin',custom_item:'k'});
 
 // turn on the selection indicator (off by default)
-pickerGebouw.selectionIndicator = true;
-
 pickerGebouw.add(dataGebouw);
-
 
 var labelVerdiep = Titanium.UI.createLabel({
 	color:'#fff',
 	text:'Verdiep',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	font:{fontSize:22,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
 	top:40,
@@ -53,20 +51,21 @@ var pickerVerdiep = Ti.UI.createPicker({
 });
 
 var dataVerdiep = [];
-dataVerdiep[0]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'1'});
-dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'2'});
-dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'3'});
+
+dataVerdiep[0]=Ti.UI.createPickerRow({title:'Verdiep',custom_item:'0'});
+dataVerdiep[1]=Ti.UI.createPickerRow({title:'Verdiep 1',custom_item:'Verdiep 1'});
+dataVerdiep[2]=Ti.UI.createPickerRow({title:'Verdiep 2',custom_item:'Verdiep 2'});
+dataVerdiep[3]=Ti.UI.createPickerRow({title:'Verdiep 3',custom_item:'Verdiep 3'});
 
 // turn on the selection indicator (off by default)
 pickerVerdiep.selectionIndicator = true;
-
 pickerVerdiep.add(dataVerdiep);
 
 
 var labelLokaal = Titanium.UI.createLabel({
 	color:'#fff',
 	text:'Lokaal',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	font:{fontSize:22,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
 	top:65,
@@ -79,30 +78,32 @@ var pickerLokaal = Ti.UI.createPicker({
 });
 
 var dataLokaal = [];
-dataLokaal[0]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'1'});
-dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'2'});
-dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'3'});
-dataLokaal[3]=Ti.UI.createPickerRow({title:'Lokaal 4',custom_item:'4'});
-dataLokaal[4]=Ti.UI.createPickerRow({title:'Lokaal 5',custom_item:'5'});
-dataLokaal[5]=Ti.UI.createPickerRow({title:'Lokaal 6',custom_item:'6'});
-dataLokaal[6]=Ti.UI.createPickerRow({title:'Lokaal 7',custom_item:'7'});
-dataLokaal[7]=Ti.UI.createPickerRow({title:'Lokaal 8',custom_item:'8'});
-dataLokaal[8]=Ti.UI.createPickerRow({title:'Lokaal 9',custom_item:'9'});
-dataLokaal[9]=Ti.UI.createPickerRow({title:'Lokaal 10',custom_item:'10'});
+dataLokaal[0]=Ti.UI.createPickerRow({title:'Lokaal',custom_item:'0'});
+dataLokaal[1]=Ti.UI.createPickerRow({title:'Lokaal 1',custom_item:'Lokaal 1'});
+dataLokaal[2]=Ti.UI.createPickerRow({title:'Lokaal 2',custom_item:'Lokaal 2'});
+dataLokaal[3]=Ti.UI.createPickerRow({title:'Lokaal 3',custom_item:'Lokaal 3'});
+dataLokaal[4]=Ti.UI.createPickerRow({title:'Lokaal 4',custom_item:'Lokaal 4'});
+dataLokaal[5]=Ti.UI.createPickerRow({title:'Lokaal 5',custom_item:'Lokaal 5'});
+dataLokaal[6]=Ti.UI.createPickerRow({title:'Lokaal 6',custom_item:'Lokaal 6'});
+dataLokaal[7]=Ti.UI.createPickerRow({title:'Lokaal 7',custom_item:'Lokaal 7'});
+dataLokaal[8]=Ti.UI.createPickerRow({title:'Lokaal 8',custom_item:'Lokaal 8'});
+dataLokaal[9]=Ti.UI.createPickerRow({title:'Lokaal 9',custom_item:'Lokaal 9'});
+dataLokaal[10]=Ti.UI.createPickerRow({title:'Lokaal 10',custom_item:'Lokaal 10'});
 
 // turn on the selection indicator (off by default)
 pickerLokaal.selectionIndicator = true;
-
 pickerLokaal.add(dataLokaal);
+
 
 pickerGebouw.addEventListener ('change',function()
   {
     labelGebouw.text = pickerGebouw.getSelectedRow(0).title;
     labelItemGebouw.text = pickerGebouw.getSelectedRow(0).title;
-    labelItemGebouw.color = '#4c2d4e';
+    labelGebouw.color = '#4fc6dc';
     winmain.remove(pickerGebouw);
     winmain.add(pickerVerdiep);
     winmain.add(labelVerdiep);
+
     
     //lijst sorteren op gebouw
     // send the data
@@ -114,8 +115,8 @@ pickerVerdiep.addEventListener ('change',function()
   	pickerVerdiep.top = 85;
     winmain.add(pickerVerdiep);
     labelVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
-    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;    
-    labelItemVerdiep.color = '#4c2d4e';
+    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
+    labelVerdiep.color = '#4fc6dc';
     winmain.remove(pickerVerdiep);
     winmain.add(labelLokaal);
     winmain.add(pickerLokaal);
@@ -130,7 +131,7 @@ pickerLokaal.addEventListener ('change',function()
   	pickerLokaal.top = 115;
     labelLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;    
     labelItemLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;
-     labelItemLokaal.color = '#4c2d4e';
+    labelLokaal.color = '#4fc6dc';
     winmain.remove(pickerLokaal);
     
     winmain.add(button);
@@ -146,8 +147,9 @@ winmain.add(pickerGebouw);
 
 var label1_4 = Titanium.UI.createLabel({
 	text:'Bestaande Problemen',
-	color: '#4fc6dc',
-	font:{fontSize:21,fontFamily:'Helvetica Neue'},
+	color: '#4c2d4e',
+	backgroundColor: '#4fc6dc',
+	font:{fontSize:30,fontFamily:'Helvetica Neue'},
 	textAlign:'center',
 	width:'auto',
 	top:150,
@@ -156,7 +158,7 @@ var label1_4 = Titanium.UI.createLabel({
 
 var nodeTable = Ti.UI.createTableView({
 	color: '#fff',
-  	height: '80%',
+  	height: '70%',
   	width: '80%',
   	align: 'center',
   	top:180
@@ -234,7 +236,7 @@ winmain.add(labelItemGebouw);
 
 //knop nieuw probleem
 var button = Titanium.UI.createButton({
-	title:'Nieuw Probleem',
+	title:'Nieuwe melding',
 	color: '#4c2d4e',
 	align: 'center',
 	top:10,

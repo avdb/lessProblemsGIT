@@ -58,7 +58,6 @@ var label7 = Titanium.UI.createLabel({
 
 var label8 = Titanium.UI.createLabel({
 	color:'#4fc6dc',
-	text:'verdiep:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:280,
@@ -67,7 +66,6 @@ var label8 = Titanium.UI.createLabel({
 
 var label9 = Titanium.UI.createLabel({
 	color:'#4fc6dc',
-	text:'lokaal:',
 	font:{fontSize:18,fontFamily:'Helvetica Neue'},
 	width:'auto',
 	top:330,
