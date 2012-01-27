@@ -162,7 +162,15 @@ buttonVolgendeStap.addEventListener('click',function(e)
 		}
 	}
 	var loginString = JSON.stringify(loginObject);
-	xhrTest.open('POST', 'http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
+	if (winOverzicht.idNode != "")
+	{
+		xhrTest.open('PUT', 'http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node/'+winOverzicht.idNode+'.json');
+	}
+	if (!winOverzicht.idNode)
+	{
+		xhrTest.open('POST', 'http://www.vandenboschan2011.dreamhosters.com/drupal-7.10/api/node');
+	}
+	
 	// set the content-type header
 	xhrTest.setRequestHeader('content-type', 'application/json');
 

@@ -129,9 +129,10 @@ buttonVolgendeStap.addEventListener('click',function(e)
 		winOverzicht.name = txtName.value;
 		winOverzicht.schoolNumber = txtSchoolNummer.value;
 		winOverzicht.description = txtOmschrijving.value;
- 		winOverzicht.gebouwProblem = win2.gebouwProblem;;
- 		winOverzicht.verdiepProblem = win2.verdiepProblem;;
- 		winOverzicht.lokaalProblem = win2.lokaalProblem;;
+ 		winOverzicht.gebouwProblem = win2.gebouwProblem;
+ 		winOverzicht.verdiepProblem = win2.verdiepProblem;
+ 		winOverzicht.lokaalProblem = win2.lokaalProblem;
+ 		winOverzicht.idNode = win2.idNode;
 	}
 	
 	//window openen

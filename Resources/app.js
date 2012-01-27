@@ -184,6 +184,7 @@ nodeTable.addEventListener("click", function(e){
  	win2.lokaalProblem = e.rowData.lokaal;
  	win2.omschrijvingProblem = e.rowData.omschrijving;
  	win2.sNummerProbleem = e.rowData.snummer;
+ 	win2.idNode = e.rowData.path;
 	win2.open();
 });
 
@@ -328,7 +329,7 @@ xhrAlleNodes.onload = function()
 		        verdiep : verdiepInfo[0].value,
 		        lokaal : lokaalInfo[0].value,
 		        snummer: sNummerInfo[0].value,
-		        path: response.uri
+		        path: response.vid
 		      });
 		      
 		      alleNodes.push(rowNode);
