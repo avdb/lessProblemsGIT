@@ -109,7 +109,6 @@ pickerLokaal.add(dataLokaal);
 pickerGebouw.addEventListener ('change',function()
   {
     labelGebouw.text = pickerGebouw.getSelectedRow(0).title;
-    labelItemGebouw.text = pickerGebouw.getSelectedRow(0).title;
     labelGebouw.color = '#4fc6dc';
     winmain.remove(pickerGebouw);
     winmain.add(pickerVerdiep);
@@ -123,10 +122,8 @@ pickerGebouw.addEventListener ('change',function()
   
 pickerVerdiep.addEventListener ('change',function()
   {
-  	pickerVerdiep.top = 85;
     winmain.add(pickerVerdiep);
     labelVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
-    labelItemVerdiep.text = pickerVerdiep.getSelectedRow(0).custom_item;
     labelVerdiep.color = '#4fc6dc';
     winmain.remove(pickerVerdiep);
     winmain.add(labelLokaal);
@@ -139,9 +136,7 @@ pickerVerdiep.addEventListener ('change',function()
  
 pickerLokaal.addEventListener ('change',function()
   {
-  	pickerLokaal.top = 115;
     labelLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;    
-    labelItemLokaal.text = pickerLokaal.getSelectedRow(0).custom_item;
     labelLokaal.color = '#4fc6dc';
     winmain.remove(pickerLokaal);
     
@@ -186,11 +181,6 @@ var nodePath;
 
 //item van lijst wordt geselecteerd --> extra info tonen.
 nodeTable.addEventListener("click", function(e){
-	labelItem.text = e.rowData.title;
-	labelItemGebouw.text = e.rowData.gebouw;
-	labelItemVerdiep.text = e.rowData.verdiep;
-	labelItemLokaal.text = e.rowData.lokaal;
-	
 	win2.titleProblem = e.rowData.title;  
  	win2.gebouwProblem = e.rowData.gebouw;
  	win2.verdiepProblem = e.rowData.verdiep;
@@ -201,48 +191,6 @@ nodeTable.addEventListener("click", function(e){
 	win2.open();
 });
 
-
-var labelItem = Titanium.UI.createLabel({
-	color: 'black',
-	backgroundColor: 'grey',
-	font:{fontSize:21,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:450,
-	left:10
-});
-var labelItemGebouw = Titanium.UI.createLabel({
-	color: 'black',
-	backgroundColor: 'grey',
-	font:{fontSize:21,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:500,
-	left:10
-});
-var labelItemVerdiep = Titanium.UI.createLabel({
-	color: 'black',
-	backgroundColor: 'grey',
-	font:{fontSize:21,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:550,
-	left:10
-});
-var labelItemLokaal = Titanium.UI.createLabel({
-	color: 'black',
-	backgroundColor: 'grey',
-	font:{fontSize:21,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto',
-	top:600,
-	left:10
-
-});
-winmain.add(labelItem);
-winmain.add(labelItemLokaal);
-winmain.add(labelItemVerdiep);
-winmain.add(labelItemGebouw);
 
 
 //knop nieuw probleem
@@ -258,9 +206,9 @@ var button = Titanium.UI.createButton({
 button.addEventListener('click',function(e)
 {
 	//variables meesturen
- 	win2.gebouwProblem = labelItemGebouw.text;
- 	win2.verdiepProblem = labelItemVerdiep.text;
- 	win2.lokaalProblem = labelItemLokaal.text;
+ 	win2.gebouwProblem = labelGebouw.text;
+ 	win2.verdiepProblem = labelVerdiep.text;
+ 	win2.lokaalProblem = labelLokaal.text;
 	//window openen
 	win2.open();
 });

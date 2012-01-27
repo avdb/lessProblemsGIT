@@ -92,19 +92,10 @@ win2.add(txtName);
 win2.add(txtOmschrijving);
 win2.add(txtSchoolNummer);
 
-var labelTitle = Titanium.UI.createLabel({
-	color:'black',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	width:'auto',
-	top:450,
-	left:10
-});
-win2.add(labelTitle);
 win2.add(labelItemGebouw);
 win2.add(labelItemVerdiep);
 win2.add(labelItemLokaal);
 //variable in label stoppen
-labelTitle.text = win2.titleProblem;
 labelItemGebouw.text = win2.gebouwProblem;
 labelItemVerdiep.text = win2.verdiepProblem;
 labelItemLokaal.text = win2.lokaalProblem;
