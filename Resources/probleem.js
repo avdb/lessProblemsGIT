@@ -123,11 +123,15 @@ buttonVolgendeStap.addEventListener('click',function(e)
  		winOverzicht.verdiepProblem = win2.verdiepProblem;
  		winOverzicht.lokaalProblem = win2.lokaalProblem;
  		winOverzicht.idNode = win2.idNode;
+ 		//window openen
+		winOverzicht.open();
+		win2.close();
+	}
+	else
+	{
+		alert("Gelieve alle velden in te vullen aub.");
 	}
 	
-	//window openen
-	winOverzicht.open();
-	win2.close();
 });
 
 buttonVorigeStap.addEventListener('click',function(e)
