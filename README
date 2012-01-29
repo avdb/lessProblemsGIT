@@ -1,8 +1,8 @@
 Welcome to your Appcelerator Titanium Mobile Project
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
-
+LessProblems was created as an assignments for the course Mobile Development @ Lessius Hogeschool Mechelen.
+Best use of the application on Emulators or Devices running android 2.2 or better 
+and screen resolutions hvga or hvga800.
 
 
 ----------------------------------
@@ -16,4 +16,3 @@ Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
 Titanium is licensed under the Apache Public License (Version 2). Please
 see the LICENSE file for the full license.
 
-PULL TEST AVDB
